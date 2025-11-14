@@ -54,7 +54,7 @@ print(f"원천데이터 개수 : {len(os.listdir('dataset/images'))}")
 print(f"라벨데이터 개수 : {len(os.listdir('dataset/labels'))}")
 
 
-#########################################
+# #########################################
 
 img_dir = './dataset/images'
 lbl_dir = './dataset/labels'
@@ -71,7 +71,7 @@ for img in images:
     else:
         print(" 라벨 없음:", img)
 
-# 매칭된 리스트로 완전히 교체
+# # 매칭된 리스트로 완전히 교체
 images, labels = zip(*matched_pairs)
 images = list(images)
 labels = list(labels)

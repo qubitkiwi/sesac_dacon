@@ -50,9 +50,12 @@ def convert_to_coco(input_dir, output_file, directory):
     IMG_H = 3040
     
     coco = {
+        "info" : [],
         "images": [],
         "annotations": [],
-        "categories": []
+        "categories": [],
+        "licenses" : []
+
     }
 
     annotation_id = 0

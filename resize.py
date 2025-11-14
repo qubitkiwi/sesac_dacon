@@ -8,10 +8,10 @@ import sys
 # 1. 원본 이미지 크기 (비율 계산용)
 # 원본 크기가 이미지마다 다를 경우, 
 # 아래 로직 대신 "스크립트 실행" 부분의 주석을 참고하세요.
-ORIGINAL_SIZE = (4056, 3040) 
+ORIGINAL_SIZE = (4032, 3040) 
 
 # 2. 목표 세로 크기 (Height)
-TARGET_HEIGHT = 760
+TARGET_HEIGHT = 1520
 
 # 3. 새 이미지 크기 자동 계산 (비율 유지)
 # 원본 비율 = 너비 / 높이
@@ -23,10 +23,11 @@ new_width = int(round(TARGET_HEIGHT * aspect_ratio))
 NEW_SIZE = (new_width, TARGET_HEIGHT)
 
 # 4. 원본 데이터가 있는 기본 경로
-BASE_PATH = './data'
+######## 경로는 수정할 것 #########
+BASE_PATH = './dataset'   
 
 # 5. 리사이즈된 이미지를 저장할 새 폴더 경로
-OUTPUT_PATH = f'./data_resized_{new_width}*{TARGET_HEIGHT}'
+OUTPUT_PATH = f'./DT__resized_{new_width}*{TARGET_HEIGHT}'
 
 # 6. 처리할 하위 폴더 목록
 PARTITIONS = ['train', 'valid', 'test']
@@ -46,7 +47,7 @@ def resize_images():
 
     try:
         for part in PARTITIONS:
-            image_dir = os.path.join(BASE_PATH, part, 'images')
+            image_dir = os.path.join(BASE_PATH, part, 'images')  # ./dataset/iamges/
             output_dir = os.path.join(OUTPUT_PATH, part, 'images')
             os.makedirs(output_dir, exist_ok=True)
             
